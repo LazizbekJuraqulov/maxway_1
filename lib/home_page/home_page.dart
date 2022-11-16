@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:maxway/home_page/action_page.dart';
-import 'package:maxway/home_page/addremove.dart';
 import 'package:maxway/home_page/cost.dart';
 import 'package:maxway/home_page/maxbur.dart';
 import 'package:maxway/home_page/product.dart';
@@ -16,6 +16,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  
   List list1 = ["Максим бокс", "Донар блюдо", "Хот дог"];
   List foto = [
     "assets/rasmlar/rec3.png",
@@ -30,49 +32,52 @@ class _HomePageState extends State<HomePage> {
   @override
 
   void initState() {
-    post=true;
+
     setState(() {});
     super.initState();
   }
+  void update(bool unic){
+   
+    setState(() {
+       post = unic;
+    });
+  }
+  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffDFDFDF),
-      appBar: AppBar(
-        elevation: 0.5,
+      appBar:AppBar(
         backgroundColor: Color(0xffffffff),
-        bottom: PreferredSize(
-          preferredSize: Size.fromHeight(80),
-          child: Padding(
-              padding:
-                  EdgeInsets.only(top: 60, left: 12, bottom: 16, right: 12),
-              child: TextField(
+        elevation: 0.5,
+            systemOverlayStyle: const SystemUiOverlayStyle(
+              statusBarColor: Colors.white,
+            ),
+            toolbarHeight: 90,
+            title: Container(
+              height: 40,
+              padding: const EdgeInsets.only(left: 14,),
+              margin: EdgeInsets.only(top: 40, bottom: 16),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Color.fromARGB(255, 243, 241, 241),
+              ),
+              child: TextFormField(
+                //onTap: () => setState(() => _isPositioned = true),
                 decoration: InputDecoration(
-                  constraints: BoxConstraints(minHeight: 40),
-                  hintText: "Поиск",
-                  hintStyle: TextStyle(
-                    fontSize: 15,
-                  ),
-                  prefixIcon: Container(
-                      width: 14.98,
-                      height: 14.98,
-                      padding: EdgeInsets.only(
-                          top: 12.32, left: 14.31, bottom: 12.7, right: 10.7),
-                      child: SvgPicture.asset(
-                        "assets/icons/ic_search.svg",
-                      )),
-                  prefixStyle: TextStyle(
-                    color: Color(0xff818C99),
-                  ),
-                  filled: true,
-                  fillColor: Color(0xffF8F6FA),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(12))),
-                ),
-              )),
-        ),
-      ),
+                    hintText: "Поиск",
+                    hintStyle: TextStyle(color: Color(0xfff818C99)),
+                    icon: SvgPicture.asset(
+                      "assets/icons/ic_search.svg",
+                      width: 20,
+                      height: 20,
+                    ),
+                    focusedBorder: InputBorder.none,
+                    disabledBorder: InputBorder.none,
+                    enabledBorder: InputBorder.none),
+              ),
+            )),
       body: Stack(
         children: [
           Positioned(
@@ -173,25 +178,25 @@ class _HomePageState extends State<HomePage> {
                   ),
                 )),
               ),
-              MaxBurPage(post),
+              MaxBurPage(unic: update,)
             ]),
           ),
-          // Positioned(
-          //   bottom: 0,
-          //   child:post ? Container(
-          //     width: MediaQuery.of(context).size.width*1,
-          //     height: 72,
-          //     decoration: BoxDecoration(borderRadius: BorderRadius.circular(12),color: Color(0xffffffff)),
-          //     child: Padding(
-          //       padding: const EdgeInsets.all(12.0),
-          //       child: Container(
-          //         height: 48,
-          //         decoration: BoxDecoration(
-          //           color: Color(0xff51267D),borderRadius: BorderRadius.circular(12),
-          //         ),
-          //       ),
-          //     ),
-          //   ):SizedBox()),
+          Positioned(
+            bottom: 0,
+            child:post ?SizedBox(): Container(
+              width: MediaQuery.of(context).size.width*1,
+              height: 72,
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(12),color: Color(0xffffffff)),
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Container(
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: Color(0xff51267D),borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+            )),
         ],
       ),
     );}}
