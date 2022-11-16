@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                       }),
                 ),
               ),
-              SliverPadding(
+              const SliverPadding(
                 padding: EdgeInsets.only(top: 16, left: 12, bottom: 8),
                 sliver: SliverToBoxAdapter(
                     child: SizedBox(
@@ -166,7 +166,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              SliverPadding(
+             const SliverPadding(
                 padding: EdgeInsets.only(top: 16, left: 12, bottom: 8),
                 sliver: SliverToBoxAdapter(
                     child: SizedBox(
@@ -178,7 +178,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 )),
               ),
-              MaxBurPage(unic: update,)
+              MaxBurPage(unic: update,),
             ]),
           ),
           Positioned(
@@ -194,6 +194,33 @@ class _HomePageState extends State<HomePage> {
                   decoration: BoxDecoration(
                     color: Color(0xff51267D),borderRadius: BorderRadius.circular(12),
                   ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                    
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Container(
+                        width: 24,
+                        height: 24,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 218, 184, 224),
+                          borderRadius: BorderRadius.circular(12)),child: Text("1",style: TextStyle(fontSize: 13,color: Color(0xffffffff)),),
+                      ),
+                    ),
+                    SizedBox(width: 50),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 16,bottom: 16,),
+                      child: Text("Корзина",style: TextStyle(fontSize: 15,color: Color(0xffffffff),)),
+                    ),
+                      Padding(
+                      padding: const EdgeInsets.only(top: 16,bottom: 16,right: 12),
+                      child: Text("132 400 сум",style: TextStyle(fontSize: 15,color: Color(0xffffffff),)),
+                    ),
+                    
+
+                  ],),
                 ),
               ),
             )),

@@ -9,7 +9,7 @@ class MaxBurPage extends StatefulWidget {
  final ValueChanged<bool> unic;
  
   
-   MaxBurPage({required this.unic,});
+  MaxBurPage({required this.unic,});
 
   @override
   State<MaxBurPage> createState() => _MaxBurPageState();
@@ -88,8 +88,8 @@ class _MaxBurPageState extends State<MaxBurPage> {
       children: [
      InkWell(onTap: (){
             list4[index]--;
+              food=!food;
              if (list4[index] < bir) {
-              food=false;
               widget.unic(food);
               list5[index]=!list5[index];
               list4[index] = bir;
