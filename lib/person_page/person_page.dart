@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:maxway/person_page/edit_page.dart';
 
 class PersonPage extends StatefulWidget {
   const PersonPage({Key? key}) : super(key: key);
@@ -14,8 +15,6 @@ class _PersonPageState extends State<PersonPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-  
-      backgroundColor: Color(0xfffDFDFDF),
       appBar: AppBar(
         elevation: 0.5,
         backgroundColor: Color(0xffffffff),
@@ -35,7 +34,11 @@ class _PersonPageState extends State<PersonPage> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return EditPage();
+              }));
+            },
             icon: SvgPicture.asset(
               "assets/icons/ic_edit.svg",
               width: 24,

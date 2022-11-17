@@ -3,10 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:maxway/home_page/action_page.dart';
-import 'package:maxway/home_page/cost.dart';
-import 'package:maxway/home_page/maxbur.dart';
-import 'package:maxway/home_page/product.dart';
+import 'package:maxway/home_page/widgets/action_page.dart';
+import 'package:maxway/home_page/widgets/cost.dart';
+import 'package:maxway/home_page/widgets/give_order.dart';
+import 'package:maxway/home_page/widgets/maxbur.dart';
+import 'package:maxway/home_page/widgets/product.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,16 +17,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
-  
-  List list1 = ["Максим бокс", "Донар блюдо", "Хот дог"];
-  List foto = [
-    "assets/rasmlar/rec3.png",
-    "assets/rasmlar/rec2.png",
-    "assets/rasmlar/rec1.png"
+ List foto = [
+    "assets/rasmlar/ak1.jpg",
+    "assets/rasmlar/ak2.jpg",
+    "assets/rasmlar/ak3.jpg", "assets/rasmlar/ak1.jpg",
+    "assets/rasmlar/ak2.jpg",
+    "assets/rasmlar/ak3.jpg"
   ];
-
-   
   List<bool> isTrue = List.generate(13, (index) => false);
   List list = ["Максибокс","Лаваш","Клубный сендвич","Шаурма","Донар Кебаб","Хаги","Бургер","Хотдог","перекус","Гарнир","Двоюродная сестра","Напитки","Десерт"];
   bool post=true;
@@ -47,7 +45,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffDFDFDF),
       appBar:AppBar(
         backgroundColor: Color(0xffffffff),
         elevation: 0.5,
@@ -141,14 +138,13 @@ class _HomePageState extends State<HomePage> {
                     height: 88,
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemCount: 3,
+                        itemCount: 6,
                         itemBuilder: (context, index) {
                           return InkWell(
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return ActionPage("${foto[index]}", "${list1[index]}",
-                                    "${list1[index]}");
+                                return ActionPage("${foto[index]}");
                               }));
                             },
                             child: Container(
@@ -183,47 +179,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Positioned(
             bottom: 0,
-            child:post ?SizedBox(): Container(
-              width: MediaQuery.of(context).size.width*1,
-              height: 72,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(12),color: Color(0xffffffff)),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Container(
-                  height: 48,
-                  decoration: BoxDecoration(
-                    color: Color(0xff51267D),borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                    
-                    Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Container(
-                        width: 24,
-                        height: 24,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 218, 184, 224),
-                          borderRadius: BorderRadius.circular(12)),child: Text("1",style: TextStyle(fontSize: 13,color: Color(0xffffffff)),),
-                      ),
-                    ),
-                    SizedBox(width: 50),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16,bottom: 16,),
-                      child: Text("Корзина",style: TextStyle(fontSize: 15,color: Color(0xffffffff),)),
-                    ),
-                      Padding(
-                      padding: const EdgeInsets.only(top: 16,bottom: 16,right: 12),
-                      child: Text("132 400 сум",style: TextStyle(fontSize: 15,color: Color(0xffffffff),)),
-                    ),
-                    
-
-                  ],),
-                ),
-              ),
-            )),
+            child:post ?SizedBox(): GiveOrderPage()),
         ],
       ),
     );}}

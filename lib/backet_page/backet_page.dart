@@ -137,11 +137,11 @@ class _BacketPageState extends State<BacketPage>with TickerProviderStateMixin {
                   children: [
                    const Padding(
                       padding:  EdgeInsets.only(top: 16,left: 12),
-                      child: Text("Статус заказа №1342",style: TextStyle(fontSize: 20,color: Color(0xff000000)),),
+                      child: Text("Статус заказа №1342",style: TextStyle(fontSize: 20,color: Color(0xff000000),fontWeight: FontWeight.w600),),
                     ),
                     const Padding(
                       padding:  EdgeInsets.only(top:4, left: 12),
-                      child: Text("Заказ оформлен",style: TextStyle(fontSize: 17,color: Color(0xff51267D)),),
+                      child: Text("Заказ оформлен",style: TextStyle(fontSize: 17,color: Color(0xff51267D),fontWeight: FontWeight.w600),),
                     ),
                     Row(children: [
                       Padding(
