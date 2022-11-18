@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     "assets/rasmlar/ak3.jpg"
   ];
   List<bool> isTrue = List.generate(13, (index) => false);
-  List list = ["Максибокс","Лаваш","Клубный сендвич","Шаурма","Донар Кебаб","Хаги","Бургер","Хотдог","перекус","Гарнир","Двоюродная сестра","Напитки","Десерт"];
+  List list = ["Бургеры","Лаваш","Сендвич","Шаурма","Донар","Хаги","Бургер","Хотдог","Перекус","Гарнир","Напитки","Десерт"];
   bool post=true;
   @override
 
@@ -86,33 +86,31 @@ class _HomePageState extends State<HomePage> {
                       scrollDirection: Axis.horizontal,
                       itemCount: list.length,
                       itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: InkWell(
-                            onTap: () {
-                              isTrue[index] = !isTrue[index];
-                              setState(() {});
-                            },
-                            child: Container(
-                              padding: EdgeInsets.only(
-                                  top: 8, left: 12, bottom: 8, right: 12),
-                              height: 36,
-                              width: 88,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: isTrue[index]
-                                    ? Color(0xff51267D)
-                                    : Color(0xffffffff),
-                              ),
-                              child: Text(
-                                "${list[index]}",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    color: isTrue[index]
-                                        ? Color(0xffffffff)
-                                        : Colors.black),
-                              ),
+                        return InkWell(
+                          onTap: () {
+                            isTrue[index] = !isTrue[index];
+                            setState(() {});
+                          },
+                          child: Container(
+                            margin: EdgeInsets.all(8),
+                            padding: EdgeInsets.only(
+                                top: 8, left: 12, bottom: 8, right: 12),
+                            height: 36,
+                            width: 88,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: isTrue[index]
+                                  ? Color(0xff51267D)
+                                  : Color(0xffffffff),
+                            ),
+                            child: Text(
+                              "${list[index]}",
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  color: isTrue[index]
+                                      ? Color(0xffffffff)
+                                      : Colors.black),
                             ),
                           ),
                         );

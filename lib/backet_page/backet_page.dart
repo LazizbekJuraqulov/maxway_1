@@ -47,11 +47,11 @@ class _BacketPageState extends State<BacketPage>with TickerProviderStateMixin {
               tabs: [
                   Text(
                         "История заказов",
-                        style: TextStyle(fontSize: 17, color: Colors.black),
+                        style: TextStyle(fontSize: 15, color: Colors.black),
                       ),
                       Text(
                         "Текущие заказы",
-                        style: TextStyle(fontSize: 17, color: Colors.black),
+                        style: TextStyle(fontSize: 15, color: Colors.black),
                       ),
             ]),
 
@@ -125,7 +125,7 @@ class _BacketPageState extends State<BacketPage>with TickerProviderStateMixin {
           Column(
             children: [
               Container(
-                margin: EdgeInsets.all(16),
+                margin: EdgeInsets.all(15),
                 height: 144,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
@@ -155,7 +155,7 @@ class _BacketPageState extends State<BacketPage>with TickerProviderStateMixin {
                           )),
                       ),
                         const SizedBox(
-                          width: 6,
+                          width: 2,
                         ),
                       Container(width: 85,height: 4,color: Color(0xff51267D),),
                        Padding(

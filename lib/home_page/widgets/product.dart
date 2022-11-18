@@ -62,7 +62,7 @@ class _ProductPageState extends State<ProductPage> {
                   ),],),
                   Container(
                     height: 102,
-                    padding: EdgeInsets.only(top: 12,right: 12,left: 12),
+                    padding: EdgeInsets.only(top: 12,right: 12,left: 12,bottom: 12),
                     child:Row(
                       children: [
                         InkWell(
@@ -110,7 +110,7 @@ class _ProductPageState extends State<ProductPage> {
                             child:Image.asset("assets/rasmlar/plyus.png"),
                           ),
                         ),
-                        SizedBox(width: 20,),
+                        SizedBox(width: 5,),
                         Container(
                           width: 202,
                           height: 44,
@@ -120,7 +120,7 @@ class _ProductPageState extends State<ProductPage> {
                           child: Row(
                             children: [
                             Text("Добавить",style: TextStyle(fontSize: 16,color: Color(0xffffffff))),
-                            SizedBox(width: 22,),
+                            SizedBox(width: 20,),
                             Text("25 000 сум",style: TextStyle(fontSize: 16,color: Color(0xffffffff)),),
                           ],),
                         )

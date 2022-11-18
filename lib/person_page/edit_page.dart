@@ -18,13 +18,14 @@ class _EditPageState extends State<EditPage> {
   TextEditingController? _textEditingController;
   @override
   void initState() {
-    _controller=TextEditingController(text: "Alisher");
-    _editingController=TextEditingController(text: "Toxirov");
-    _textEditingController=TextEditingController(text: "+998 90 1234567");
+    _controller = TextEditingController(text: "Alisher");
+    _editingController = TextEditingController(text: "Toxirov");
+    _textEditingController = TextEditingController(text: "+998 90 1234567");
     super.initState();
   }
-  List profil=["Имя","Фамилия","Номер"];
-  List list=List.generate(3, (index) => TextEditingController());
+
+  List profil = ["Имя", "Фамилия", "Номер"];
+  List list = List.generate(3, (index) => TextEditingController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,88 +42,137 @@ class _EditPageState extends State<EditPage> {
         backgroundColor: Colors.white,
         title: const Text(
           "Редактировать профиль",
-          style: TextStyle(color: Colors.black, fontSize: 18,fontWeight:FontWeight.w600),
-        ),),
-        body: Column(
-          children: [
-            Container(
-              margin: EdgeInsets.all(12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                   Text("${profil[0]}",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400,color: Color(0xff818C99) ),),
-                  SizedBox(height: 4,),
-                  Container(height: 48,padding: EdgeInsets.only(top: 14,left: 12,bottom: 14),
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),color: Color(0xffffffff)),
-                    child: TextField(
-                    controller: _controller,
-                      decoration: InputDecoration(
-                        enabledBorder: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        disabledBorder: InputBorder.none,
-
-                      ),
+          style: TextStyle(
+              color: Colors.black, fontSize: 18, fontWeight: FontWeight.w600),
+        ),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            children: [
+              Container(
+                margin: EdgeInsets.all(12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "${profil[0]}",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xff818C99)),
                     ),
-                  )
-
-
-                ],
-              ),
-            ),
-            SizedBox(height: 12,),
-             Container(
-              margin: EdgeInsets.all(12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                   Text("${profil[1]}",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400,color: Color(0xff818C99) ),),
-                  SizedBox(height: 4,),
-                  Container(height: 48,padding: EdgeInsets.only(top: 14,left: 12,bottom: 14),
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),color: Color(0xffffffff)),
-                    child: TextField(
-                    controller: _editingController,
-                      decoration: InputDecoration(
-                        enabledBorder: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        disabledBorder: InputBorder.none,
-
-                      ),
+                    SizedBox(
+                      height: 4,
                     ),
-                  )
-
-
-                ],
-              ),
-            ),
-            SizedBox(height: 12,),
-             Container(
-              margin: EdgeInsets.all(12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                   Text("${profil[2]}",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400,color: Color(0xff818C99) ),),
-                  SizedBox(height: 4,),
-                  Container(height: 48,padding: EdgeInsets.only(top: 14,left: 12,bottom: 14),
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),color: Color(0xffffffff)),
-                    child: TextField(
-                    controller: _textEditingController,
-                      decoration: InputDecoration(
-                        enabledBorder: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        disabledBorder: InputBorder.none,
-
+                    Container(
+                      height: 48,
+                      padding: EdgeInsets.only(top: 14, left: 12, bottom: 14),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Color(0xffffffff)),
+                      child: TextField(
+                        controller: _controller,
+                        decoration: InputDecoration(
+                          enabledBorder: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                        ),
                       ),
-                    ),
-                  )
-
-
-                ],
+                    )
+                  ],
+                ),
               ),
+              SizedBox(
+                height: 12,
+              ),
+              Container(
+                margin: EdgeInsets.all(12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "${profil[1]}",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xff818C99)),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Container(
+                      height: 48,
+                      padding: EdgeInsets.only(top: 14, left: 12, bottom: 14),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Color(0xffffffff)),
+                      child: TextField(
+                        controller: _editingController,
+                        decoration: InputDecoration(
+                          enabledBorder: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Container(
+                margin: EdgeInsets.all(12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "${profil[2]}",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xff818C99)),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Container(
+                      height: 48,
+                      padding: EdgeInsets.only(top: 14, left: 12, bottom: 14),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Color(0xffffffff)),
+                      child: TextField(
+                        controller: _textEditingController,
+                        decoration: InputDecoration(
+                          enabledBorder: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Container(
+            margin: EdgeInsets.all(12),
+            width: double.infinity,
+            height: 48,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Color(0xff51267D)),
+            child: Text(
+              "Подтвердить",
+              style: TextStyle(fontSize: 16, color: Colors.white,fontWeight: FontWeight.w400),
             ),
-          ],
-        )
-      
+          ),
+        ],
+      ),
     );
-    
   }
 }
